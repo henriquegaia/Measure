@@ -7,46 +7,36 @@ using Measurements;
 
 namespace Demos
 {
-    class IntegerAllocVsClassAlloc
+    class Demo
     {
-        static readonly int arraySize = 5_000;
-        static readonly int n = 5_000;
-
         static void Main(string[] args)
         {
-            ExecutionTime.Measure("AllocateInteger", 5, () =>
-            {
-                for (int i = 0; i < n; i++)
-                {
-                    AllocateInteger(i % n);
-                }
-            });
-
-            ExecutionTime.Measure("AllocateClass", 5, () =>
-            {
-                for (int i = 0; i < n; i++)
-                {
-                    AllocateClass();
-                }
-            });
+            ShowMenu();
         }
 
-        private static void AllocateInteger(int val)
+        private static void ShowMenu()
         {
-            int[] arr = new int[arraySize];
-            for (int i = 0; i < arraySize; i++)
-            {
-                arr[i] = val;
-            }
-        }
+            IRunnable runnable;
 
-        private static void AllocateClass()
-        {
-            IntegerAllocVsClassAlloc[] arr = new IntegerAllocVsClassAlloc[arraySize];
-            for (int i = 0; i < arraySize; i++)
+            Console.WriteLine("Enter choice (1-2): ");
+            string input = Console.ReadLine();
+            int choice = 0;
+            int.TryParse(input, out choice);
+
+            switch (choice)
             {
-                arr[i] = new IntegerAllocVsClassAlloc();
+                case 1:
+                    runnable = new IntegerAllocVsClassAlloc();
+                    break;
+                case 2:
+                    runnable = new SwapIntegers();
+                    break;
+                default:
+                    runnable = null;
+                    break;
             }
+
+            runnable.Compare();
         }
     }
 }
