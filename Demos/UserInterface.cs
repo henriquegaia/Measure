@@ -8,7 +8,7 @@ namespace Demos
         {
             IRunnable runnable;
 
-            Console.WriteLine("Enter choice (1-2): ");
+            Console.WriteLine("Enter choice (1-3): ");
             string input = Console.ReadLine();
             int choice = 0;
             int.TryParse(input, out choice);
@@ -20,6 +20,9 @@ namespace Demos
                     break;
                 case 2:
                     runnable = new SwapIntegers();
+                    break;
+                case 3:
+                    runnable = new LazyDictionary();
                     break;
                 default:
                     runnable = null;
