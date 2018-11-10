@@ -4,7 +4,7 @@ namespace Demos
 {
     class UserInterface
     {
-        public static void ShowMenu()
+        public static void Menu()
         {
             IRunnable runnable;
 
@@ -15,6 +15,10 @@ namespace Demos
 
             switch (choice)
             {
+                case 0:
+                    runnable = null;
+                    Environment.Exit(0);
+                    break;
                 case 1:
                     runnable = new IntegerAllocVsClassAlloc();
                     break;
