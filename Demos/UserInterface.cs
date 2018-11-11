@@ -1,9 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Demos
 {
     class UserInterface
     {
+        public static void Menu2()
+        {
+            Console.WriteLine("Tests Available:");
+            var tests = Tests();
+            int n = 0;
+            foreach (var test in tests)
+            {
+                Console.WriteLine($"{++n}: {test.GetType().Name}");
+           }
+            Console.WriteLine("0: quit");
+            Console.Write("> ");
+            Console.ReadLine();
+        }
+
         public static void Menu()
         {
             IRunnable runnable;
@@ -37,6 +52,17 @@ namespace Demos
             }
 
             runnable.Compare();
+        }
+
+        private static List<IRunnable> Tests()
+        {
+            return new List<IRunnable>()
+            {
+                new IntegerAllocVsClassAlloc(),
+                new SwapIntegers(),
+                new LazyDictionary(),
+                new Memoization()
+            };
         }
     }
 }

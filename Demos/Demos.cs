@@ -10,8 +10,7 @@ namespace Demos
     {
         static void Main(string[] args)
         {
-            UserInterface.Menu();
+            UserInterface.Menu2();
         }
-
     }
 }
