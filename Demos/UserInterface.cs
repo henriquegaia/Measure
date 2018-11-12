@@ -7,16 +7,35 @@ namespace Demos
     {
         public static void Menu2()
         {
+            IRunnable runnable = null;
             Console.WriteLine("Tests Available:");
             var tests = Tests();
             int n = 0;
-            foreach (var test in tests)
+            string choice = "-1";
+
+            while(choice != "0")
             {
-                Console.WriteLine($"{++n}: {test.GetType().Name}");
-           }
-            Console.WriteLine("0: quit");
-            Console.Write("> ");
-            Console.ReadLine();
+                foreach (IRunnable test in tests)
+                {
+                    Console.WriteLine($"{++n}: {test.GetType().Name}");
+                    runnable = test;
+                }
+                n = 0;
+                Console.WriteLine("0: quit");
+                Console.Write("> ");
+                choice = Console.ReadLine();
+                TryExecuteTest(runnable, tests, choice);
+            }
+            Environment.Exit(0);
+        }
+
+        private static void TryExecuteTest(IRunnable runnable, List<IRunnable> tests, string choice)
+        {
+            int.TryParse(choice, out int choiceInt);
+            if (choiceInt > 0 && choiceInt < tests.Count + 1)
+            {
+                runnable.Compare();
+            }
         }
 
         public static void Menu()
