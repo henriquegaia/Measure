@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Demos
 {
-    class Memoization:IRunnable
+    class Memoization:Test, IRunnable
     {
         public void Compare()
         {
