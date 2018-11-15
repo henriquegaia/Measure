@@ -4,9 +4,9 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demos
+namespace AvailableTests
 {
-    class Memoization:Test, IRunnable
+    public class Memoization:Test, IRunnable
     {
         public void Compare()
         {

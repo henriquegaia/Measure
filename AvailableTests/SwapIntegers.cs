@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Demos
+namespace AvailableTests
 {
-    class SwapIntegers : IRunnable
+    public class SwapIntegers : IRunnable
     {
         static Random rand = new Random();
         static int len = 1_000_000;

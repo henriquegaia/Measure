@@ -3,9 +3,9 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demos
+namespace AvailableTests
 {
-    public static class Utils
+    internal static class Utils
     {
         public static Func<Argu, Ret> Memoize<Argu, Ret>(this Func<Argu, Ret> functor)
         {

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demos
+namespace AvailableTests
 {
-    class IntegerAllocVsClassAlloc:IRunnable
+    public class IntegerAllocVsClassAlloc:IRunnable
     {
         static readonly int arraySize = 5_000;
         static readonly int n = 5_000;

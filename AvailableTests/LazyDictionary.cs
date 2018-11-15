@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demos
+namespace AvailableTests
 {
-    class LazyDictionary : IRunnable
+    public class LazyDictionary : IRunnable
     {
         public void Compare()
         {
