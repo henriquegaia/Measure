@@ -23,6 +23,7 @@ namespace Demos
                 }
                 n = 0;
                 Console.WriteLine("0: quit");
+                Console.WriteLine();
                 Console.Write("> ");
                 choice = Console.ReadLine();
                 TryExecuteTest(runnable, tests, choice);
