@@ -11,6 +11,8 @@ namespace AvailableTests
         static readonly int n = 5_000;
         static readonly int reps = 5;
 
+        public string FriendlyName => "Allocation - Integer Vs Class";
+
         public void Compare()
         {
             ExecutionTime.Measure("AllocateInteger", reps, () =>

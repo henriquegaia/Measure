@@ -14,6 +14,8 @@ namespace AvailableTests
         static int[] arr1 = new int[len];
         static int[] arr2 = new int[len];
 
+        public string FriendlyName => "Swapping Integers Between 2 Arrays";
+
         public void Compare()
         {
             SetUp();

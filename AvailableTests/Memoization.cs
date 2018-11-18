@@ -8,6 +8,8 @@ namespace AvailableTests
 {
     public class Memoization:Test, IRunnable
     {
+        public string FriendlyName => "Recurring Results - Memoization or Not";
+
         public void Compare()
         {
             int reps = 5;

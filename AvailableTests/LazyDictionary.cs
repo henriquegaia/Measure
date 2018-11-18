@@ -7,6 +7,8 @@ namespace AvailableTests
 {
     public class LazyDictionary : IRunnable
     {
+        public string FriendlyName => "Dictionary Storage - Lazy Vs Not Lazy";
+
         public void Compare()
         {
             int reps = 5;

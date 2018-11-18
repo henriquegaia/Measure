@@ -13,11 +13,16 @@ namespace Demos
             var tests = Tests();
             int n = 0;
             string choice = "-1";
+            Type type = null;
 
-            while(choice != "0")
+            while (choice != "0")
             {
                 foreach (IRunnable test in tests)
                 {
+                    //type = test.GetType();
+                    //var prop = typeof(IRunnable).GetProperty("FriendlyName");
+                    //string friendlyName = prop.GetValue(type, new object[] { });
+                    //Console.WriteLine($"{++n}: {friendlyName}");
                     Console.WriteLine($"{++n}: {test.GetType().Name}");
                     runnable = test;
                 }
