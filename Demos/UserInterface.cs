@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using AvailableTests;
 
-namespace Demos
+namespace Presentation.ConsoleUI
 {
-    class UserInterface
+    internal class UserInterface
     {
-        public static void Menu2()
+        internal static void Menu()
         {
             IRunnable runnable = null;
             Console.WriteLine("Tests Available:");
@@ -20,9 +20,9 @@ namespace Demos
             {
                 foreach (IRunnable test in tests)
                 {
-                    type = test.GetType();
-                    PropertyInfo property = type.GetProperty("FriendlyName");
-                    Console.WriteLine(property.GetValue(type));
+                    //type = test.GetType();
+                    //PropertyInfo property = type.GetProperty("FriendlyName");
+                    //Console.WriteLine(property.GetValue(type));
                     //Console.WriteLine(type.GetProperty("FriendlyName").GetValue(type, null));
 
                     //var prop = typeof(IRunnable).GetProperty("friendlyname");
@@ -49,41 +49,6 @@ namespace Demos
             {
                 runnable.Compare();
             }
-        }
-
-        public static void Menu()
-        {
-            IRunnable runnable;
-
-            Console.WriteLine("Enter choice (1-4): ");
-            string input = Console.ReadLine();
-            int choice = 0;
-            int.TryParse(input, out choice);
-
-            switch (choice)
-            {
-                case 0:
-                    runnable = null;
-                    Environment.Exit(0);
-                    break;
-                case 1:
-                    runnable = new IntegerAllocVsClassAlloc();
-                    break;
-                case 2:
-                    runnable = new SwapIntegers();
-                    break;
-                case 3:
-                    runnable = new LazyDictionary();
-                    break;
-                case 4:
-                    runnable = new Memoization();
-                    break;
-                default:
-                    runnable = null;
-                    break;
-            }
-
-            runnable.Compare();
         }
 
         private static List<IRunnable> Tests()

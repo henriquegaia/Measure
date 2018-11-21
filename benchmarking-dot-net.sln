@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Measurements", "Measurements\Measurements.csproj", "{ED994CF5-BD6E-4AC4-A13B-1466234EDC8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demos", "Demos\Demos.csproj", "{C92D49EC-AC8F-406C-9C58-4E7A547F77D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.ConsoleUI", "Demos\Presentation.ConsoleUI.csproj", "{C92D49EC-AC8F-406C-9C58-4E7A547F77D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvailableTests", "AvailableTests\AvailableTests.csproj", "{3C0C5EEC-3257-4854-9AA9-6CD5D434A33B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvailableTests", "AvailableTests\AvailableTests.csproj", "{3C0C5EEC-3257-4854-9AA9-6CD5D434A33B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
