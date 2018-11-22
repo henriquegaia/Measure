@@ -1,10 +1,10 @@
-﻿using Measurements;
+﻿using Library.Benchmark;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace AvailableTests
+namespace Library.Tests
 {
     public class SwapIntegers : IRunnable
     {
@@ -19,27 +19,27 @@ namespace AvailableTests
         public void Compare()
         {
             SetUp();
-            ExecutionTime.Measure("bitwise xor", reps, () =>
+            Execution.Measure("bitwise xor", reps, () =>
             {
                 SwapXor();
             });
             SetUp();
-            ExecutionTime.Measure("temp var", reps, () =>
+            Execution.Measure("temp var", reps, () =>
             {
                 SwapTempVar();
             });
             SetUp();
-            ExecutionTime.Measure("tuples", reps, () =>
+            Execution.Measure("tuples", reps, () =>
             {
                 SwapTuples();
             });
             SetUp();
-            ExecutionTime.Measure("arithmetics", reps, () =>
+            Execution.Measure("arithmetics", reps, () =>
             {
                 SwapArith();
             });
             SetUp();
-            ExecutionTime.Measure("Interlocked.Exchange", reps, () =>
+            Execution.Measure("Interlocked.Exchange", reps, () =>
             {
                 SwapInterlock();
             });

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AvailableTests
+namespace Library.Tests
 {
     public abstract class Test
     {

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Measurements\Measurements.csproj" />
+    <ProjectReference Include="..\Measurements\Library.Benchmark.csproj" />
   </ItemGroup>
 
 </Project>

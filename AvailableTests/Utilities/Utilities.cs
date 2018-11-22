@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
 
-namespace AvailableTests
+namespace Library.Tests
 {
-    internal static class Utils
+    internal static class Utilities
     {
         public static Func<Argu, Ret> Memoize<Argu, Ret>(this Func<Argu, Ret> functor)
         {

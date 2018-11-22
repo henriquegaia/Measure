@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Measurements
+namespace Library.Benchmark
 {
     class Result
     {

@@ -1,4 +1,4 @@
-﻿namespace AvailableTests
+﻿namespace Library.Tests
 {
      public interface IRunnable
     {

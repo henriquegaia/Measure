@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AvailableTests\AvailableTests.csproj" />
+    <ProjectReference Include="..\AvailableTests\Library.Tests.csproj" />
   </ItemGroup>
 
 </Project>

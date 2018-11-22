@@ -1,10 +1,10 @@
-﻿using Measurements;
+﻿using Library.Benchmark;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AvailableTests
+namespace Library.Tests
 {
     public class Memoization:Test, IRunnable
     {
@@ -19,17 +19,17 @@ namespace AvailableTests
             Console.WriteLine($"n = {n}");
             Console.WriteLine();
 
-            ExecutionTime.Measure("baseline", reps, () =>
+            Execution.Measure("baseline", reps, () =>
             {
                 for (int i = 0; i < its; i++)
                 {
-                    Utils.FindPrime(n);
+                    Utilities.FindPrime(n);
                 }
             });
 
-            var memFunc = Utils.Memoize<long, long>(Utils.FindPrime);
+            var memFunc = Utilities.Memoize<long, long>(Utilities.FindPrime);
 
-            ExecutionTime.Measure("memo", reps, () =>
+            Execution.Measure("memo", reps, () =>
             {
                 for (int i = 0; i < its; i++)
                 {

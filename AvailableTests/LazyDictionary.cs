@@ -1,9 +1,9 @@
-﻿using Measurements;
+﻿using Library.Benchmark;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AvailableTests
+namespace Library.Tests
 {
     public class LazyDictionary : IRunnable
     {
@@ -15,14 +15,14 @@ namespace AvailableTests
 
             var res = GenerateResults();
 
-            ExecutionTime.Measure("not lazy", reps, () =>
+            Execution.Measure("not lazy", reps, () =>
             {
                 StorageNotLazy storageNotLazy = new StorageNotLazy();
                 res = storageNotLazy.Results;
             });
 
             Lazy<Dictionary<long, long>> res2 = new Lazy<Dictionary<long, long>>(() => GenerateResults());
-            ExecutionTime.Measure("lazy", reps, () =>
+            Execution.Measure("lazy", reps, () =>
             {
                 StorageLazy storageLazy = new StorageLazy();
                 res2 = storageLazy.Results;

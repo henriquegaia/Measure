@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace Measurements
+namespace Library.Benchmark
 {
-    public class ExecutionTime
+    public class Execution
     {
         //public IEnumerable<string> Repetitions { get; set; }
         //public IEnumerable<string> Results { get; set; }

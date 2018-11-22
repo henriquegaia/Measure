@@ -1,9 +1,9 @@
-﻿using Measurements;
+﻿using Library.Benchmark;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AvailableTests
+namespace Library.Tests
 {
     public class IntegerAllocVsClassAlloc:IRunnable
     {
@@ -15,7 +15,7 @@ namespace AvailableTests
 
         public void Compare()
         {
-            ExecutionTime.Measure("AllocateInteger", reps, () =>
+            Execution.Measure("AllocateInteger", reps, () =>
             {
                 for (int i = 0; i < n; i++)
                 {
@@ -23,7 +23,7 @@ namespace AvailableTests
                 }
             });
 
-            ExecutionTime.Measure("AllocateClass", reps, () =>
+            Execution.Measure("AllocateClass", reps, () =>
             {
                 for (int i = 0; i < n; i++)
                 {
