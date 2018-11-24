@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Library.Tests
 {
-    public class IntegerAllocVsClassAlloc:IRunnable
+    public class IntegerAllocVsClassAlloc: Test, IRunnable
     {
         static readonly int arraySize = 5_000;
         static readonly int n = 5_000;

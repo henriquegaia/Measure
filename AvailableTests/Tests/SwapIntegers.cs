@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Library.Tests
 {
-    public class SwapIntegers : IRunnable
+    public class SwapIntegers : Test, IRunnable
     {
         static Random rand = new Random();
         static int len = 1_000_000;

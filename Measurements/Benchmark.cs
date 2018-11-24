@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace Library.Benchmark
 {
     public class Execution
     {
-        //public IEnumerable<string> Repetitions { get; set; }
-        //public IEnumerable<string> Results { get; set; }
+        public Dictionary<int, string> Repetitions { get; private set; }
+        public IEnumerable<string> Results { get; set; }
 
-        public static void Measure(string what, int reps, Action action)
+        public Execution() => Repetitions = new Dictionary<int, string>();
+
+        public void Measure(string what, int reps, Action action)
         {
             System.Runtime.GCSettings.LatencyMode = System.Runtime.GCLatencyMode.Batch;
             double[] results = new double[reps];
             double min, max, avg;
+            string rep;
 
             action();
 
@@ -26,7 +28,9 @@ namespace Library.Benchmark
                 action();
                 sw.Stop();
                 results[i] = sw.Elapsed.TotalMilliseconds;
-                Console.WriteLine($"repetition {i}: {results[i]} Milliseconds");
+                rep = $"repetition {++i}: {results[++i]} Milliseconds";
+                Repetitions[i] = rep;
+                Console.WriteLine(rep);
             }
 
             min = results.Min();

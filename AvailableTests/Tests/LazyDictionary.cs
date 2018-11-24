@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Library.Tests
 {
-    public class LazyDictionary : IRunnable
+    public class LazyDictionary : Test, IRunnable
     {
         public string FriendlyName => "Dictionary Storage - Lazy Vs Not Lazy";
 
