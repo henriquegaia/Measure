@@ -38,6 +38,8 @@ namespace Presentation.ConsoleUI
                 Console.Write("> ");
                 choice = Console.ReadLine();
                 TryExecuteTest(runnable, tests, choice);
+
+                // get results
             }
             Environment.Exit(0);
         }
