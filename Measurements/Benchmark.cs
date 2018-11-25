@@ -28,7 +28,7 @@ namespace Library.Benchmark
                 action();
                 sw.Stop();
                 results[i] = sw.Elapsed.TotalMilliseconds;
-                rep = $"repetition {++i}: {results[++i]} Milliseconds";
+                rep = $"repetition {i}: {results[i]} Milliseconds";
                 Repetitions[i] = rep;
                 Console.WriteLine(rep);
             }
