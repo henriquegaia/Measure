@@ -4,21 +4,23 @@ using System.Text;
 
 namespace Library.Benchmark
 {
-    class Result
+    public class Result
     {
         public DateTime CreatedAt { get; }
         public string TestName { get; }
         public double Average { get; }
         public double Minimum { get; }
         public double Maximum { get; }
+        public Dictionary<int, double> Repetitions { get; }
 
-        public Result(string testName, double average, double minimum, double maximum)
+        public Result(DateTime createdAt, string testName, double average, double minimum, double maximum, Dictionary<int, double> repetitions)
         {
-            CreatedAt = DateTime.Now;
+            CreatedAt = createdAt;
             TestName = testName;
             Average = average;
             Minimum = minimum;
             Maximum = maximum;
+            Repetitions = repetitions;
         }
     }
 }
