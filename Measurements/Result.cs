@@ -11,9 +11,9 @@ namespace Library.Benchmark
         public double Average { get; }
         public double Minimum { get; }
         public double Maximum { get; }
-        public Dictionary<int, double> Repetitions { get; }
+        public IDictionary<int, double> Repetitions { get; }
 
-        public Result(DateTime createdAt, string testName, double average, double minimum, double maximum, Dictionary<int, double> repetitions)
+        public Result(DateTime createdAt, string testName, double average, double minimum, double maximum, IDictionary<int, double> repetitions)
         {
             CreatedAt = createdAt;
             TestName = testName;

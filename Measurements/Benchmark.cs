@@ -11,7 +11,8 @@ namespace Library.Benchmark
         {
             System.Runtime.GCSettings.LatencyMode = System.Runtime.GCLatencyMode.Batch;
             double[] results = new double[reps];
-            var repetitions = new Dictionary<int, double>();
+            IDictionary<int,double> repetitions = new Dictionary<int, double>();
+
             double min, max, avg;
             string rep;
 

@@ -15,7 +15,7 @@ namespace Library.Tests
 
         public void Compare()
         {
-            Execution.Measure("AllocateInteger", reps, () =>
+            var a = Execution.Measure("AllocateInteger", reps, () =>
             {
                 for (int i = 0; i < n; i++)
                 {
@@ -23,13 +23,16 @@ namespace Library.Tests
                 }
             });
 
-            Execution.Measure("AllocateClass", reps, () =>
+            var b = Execution.Measure("AllocateClass", reps, () =>
             {
                 for (int i = 0; i < n; i++)
                 {
                     AllocateClass();
                 }
             });
+
+            Results.Add(FriendlyName, a);
+            Results.Add(FriendlyName, b);
         }
 
         private static void AllocateInteger(int val)
